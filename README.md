@@ -3,30 +3,28 @@
 Welcome to the **ETL vs ELT** repository! This project demonstrates the differences between the two popular data processing methodologies: **Extract, Transform, Load (ETL)** and **Extract, Load, Transform (ELT)**. It includes two Python scripts, `etl_process.py` and `elt_process.py`, showcasing how to process earthquake data using each approach.
 
 ---
-
 ## 🛠️ **Project Overview**
 
-### 1. **ETL (Extract, Transform, Load)**  
-   - **Process**: Data is **extracted** from the source, **transformed** to meet target requirements, and then **loaded** into the target storage.
-   - **Key Feature**: Transformation occurs *before* data is loaded into the destination.
-   - **Use Case**: Traditional systems like data warehouses, where data needs to be structured and cleaned before loading.
+### 1. **ETL (Extract, Transform, Load)**
+- **Process:** Extracts data, applies transformations locally, and loads it into the final destination.
+- **Key Feature:** Transformation occurs **before** loading.
+- **Use Case:** Ideal for structured systems like data warehouses.
 
-### 2. **ELT (Extract, Load, Transform)**  
-   - **Process**: Data is **extracted** from the source, **loaded** into the target storage in its raw form, and then **transformed** within the storage system.
-   - **Key Feature**: Transformation happens *after* data is loaded.
-   - **Use Case**: Modern systems like cloud data lakes, where raw data is stored for flexibility and transformations are performed as needed.
+### 2. **ELT (Extract, Load, Transform)**
+- **Process:** Extracts raw data, loads it as-is, and applies transformations after loading.
+- **Key Feature:** Transformation happens **after** loading.
+- **Use Case:** Best suited for modern cloud architectures like data lakes.
 
 ---
 
 ## 📂 **Repository Structure**
-
 ```
 /repo-root
 │
-├── etl_process.py   # Demonstrates the ETL methodology
-├── elt_process.py   # Demonstrates the ELT methodology
-├── requirements.txt # Python dependencies
-├── README.md        # Project documentation
+├── etl_process.py        # Demonstrates ETL methodology
+├── elt_process.py        # Demonstrates ELT methodology
+├── requirements.txt      # Python dependencies
+├── README.md             # Project documentation
 ```
 
 ---
@@ -40,43 +38,23 @@ cd your-repo-name
 ```
 
 ### 2. **Set Up the Environment**
-1. **Create a Virtual Environment**  
-   Create a new Python virtual environment to isolate dependencies:
-   ```bash
-   python -m venv venv
-   ```
 
-2. **Activate the Virtual Environment**  
-   - On **Windows**:
-     ```bash
-     venv\Scripts\activate
-     ```
-   - On **macOS/Linux**:
-     ```bash
-     source venv/bin/activate
-     ```
+#### Create and Activate a Virtual Environment
+- On **Windows**:
+  ```bash
+  python -m venv venv
+  venv\Scripts\activate
+  ```
+- On **macOS/Linux**:
+  ```bash
+  python -m venv venv
+  source venv/bin/activate
+  ```
 
-3. **Install Dependencies**  
-   Install the required libraries from `requirements.txt`:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Verify Installation**  
-   Ensure all dependencies are installed correctly:
-   ```bash
-   pip list
-   ```
-
-5. **Run the Scripts**  
-   - For the ETL process:
-     ```bash
-     python etl_process.py
-     ```
-   - For the ELT process:
-     ```bash
-     python elt_process.py
-     ```
+#### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
 ### 3. **Run the Scripts**
 
@@ -84,17 +62,17 @@ cd your-repo-name
 ```bash
 python etl_process.py
 ```
-- Fetches earthquake data from the USGS API.
-- Performs transformations locally.
-- Saves the cleaned data into "Silver" and "Gold" layers.
+- Fetches earthquake data.
+- Applies transformations locally.
+- Saves the cleaned data to `final/etl/`.
 
 #### ELT Process
 ```bash
 python elt_process.py
 ```
-- Fetches earthquake data from the USGS API.
-- Loads raw data into the "Bronze" and "Silver" layers.
-- Applies transformations in the "Gold" layer.
+- Fetches earthquake data.
+- Saves raw data to `elt/raw/`.
+- Applies transformations and saves to `final/elt/`.
 
 ---
 
@@ -111,13 +89,12 @@ python elt_process.py
 
 ## 📚 **Dependencies**
 
-This project requires the following Python libraries:
+This project uses the following Python libraries:
 
-- `requests` - For fetching data from the USGS API.
-- `pandas` - For data manipulation and transformation.
-- `geopy` - For reverse geocoding latitude/longitude to country codes.
+- `requests`: Fetch data from the USGS API.
+- `pandas`: Manipulate and transform data.
 
-Install them using:
+Install them with:
 ```bash
 pip install -r requirements.txt
 ```
@@ -126,19 +103,18 @@ pip install -r requirements.txt
 
 ## 👨‍💻 **Contributing**
 
-Contributions are welcome! If you'd like to improve this project or add additional examples, feel free to submit a pull request.
-
+Contributions are welcome! Open an issue or submit a pull request to suggest improvements or add new features.
 
 ---
 
 ## 🏗️ **Future Enhancements**
 
-- Add support for additional data sources.
-- Compare performance metrics for large-scale data.
-- Provide cloud-based implementations using AWS, Azure, or GCP.
+- Support additional data sources.
+- Implement transformations in cloud platforms (e.g., AWS, Azure).
+- Add benchmarking for ETL vs. ELT performance.
 
 ---
 
 ### 🔗 **Connect with Me**
 
-If you found this project helpful or have any questions, feel free to reach out on [LinkedIn](https://www.linkedin.com/in/lukejbyrne).
+If you enjoyed this project or video, connect with me on [LinkedIn](https://www.linkedin.com/in/lukejbyrne) or leave a comment on the GitHub repo!
