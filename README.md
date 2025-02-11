@@ -1,120 +1,42 @@
-# ETL vs ELT: A Comparison of Data Processing Methodologies
+## Installation
 
-Welcome to the **ETL vs ELT** repository! This project demonstrates the differences between the two popular data processing methodologies: **Extract, Transform, Load (ETL)** and **Extract, Load, Transform (ELT)**. It includes two Python scripts, `etl_process.py` and `elt_process.py`, showcasing how to process earthquake data using each approach.
+To run this project, you'll need Python 3.9 or higher installed on your system. You can install the required dependencies using pip:
 
----
-## 🛠️ **Project Overview**
-
-### 1. **ETL (Extract, Transform, Load)**
-- **Process:** Extracts data, applies transformations locally, and loads it into the final destination.
-- **Key Feature:** Transformation occurs **before** loading.
-- **Use Case:** Ideal for structured systems like data warehouses.
-
-### 2. **ELT (Extract, Load, Transform)**
-- **Process:** Extracts raw data, loads it as-is, and applies transformations after loading.
-- **Key Feature:** Transformation happens **after** loading.
-- **Use Case:** Best suited for modern cloud architectures like data lakes.
-
----
-
-## 📂 **Repository Structure**
-```
-/repo-root
-│
-├── etl_process.py        # Demonstrates ETL methodology
-├── elt_process.py        # Demonstrates ELT methodology
-├── requirements.txt      # Python dependencies
-├── README.md             # Project documentation
-```
-
----
-
-## 🚀 **Getting Started**
-
-### 1. **Clone the Repository**
 ```bash
-git clone https://github.com/your-repo-name.git
-cd your-repo-name
+pip install requests pandas
 ```
 
-### 2. **Set Up the Environment**
+## Usage
 
-#### Create and Activate a Virtual Environment
-- On **Windows**:
-  ```bash
-  python -m venv venv
-  venv\Scripts\activate
-  ```
-- On **macOS/Linux**:
-  ```bash
-  python -m venv venv
-  source venv/bin/activate
-  ```
+To run the ELT process, execute the following command:
 
-#### Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. **Run the Scripts**
-
-#### ETL Process
-```bash
-python etl_process.py
-```
-- Fetches earthquake data.
-- Applies transformations locally.
-- Saves the cleaned data to `final/etl/`.
-
-#### ELT Process
 ```bash
 python elt_process.py
 ```
-- Fetches earthquake data.
-- Saves raw data to `elt/raw/`.
-- Applies transformations and saves to `final/elt/`.
 
----
+This will save the transformed earthquake data to a JSON file named `earthquake_data_transformed.json` in the `elt/transformed` directory.
 
-## 📊 **Key Differences Between ETL and ELT**
+## Contributing
 
-| **Aspect**         | **ETL**                                   | **ELT**                                 |
-|---------------------|-------------------------------------------|-----------------------------------------|
-| **Transformation** | Before loading data into storage.         | After loading data into storage.        |
-| **Performance**    | Suitable for smaller datasets.            | Leverages modern storage and processing power for big data. |
-| **Flexibility**    | Requires schema upfront for transformations. | Stores raw data for on-demand transformations. |
-| **Use Case**       | Data warehouses, legacy systems.          | Data lakes, modern cloud architectures. |
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request on GitHub.
 
----
+## License
 
-## 📚 **Dependencies**
+This project is licensed under the MIT License.
 
-This project uses the following Python libraries:
+## Acknowledgments
 
-- `requests`: Fetch data from the USGS API.
-- `pandas`: Manipulate and transform data.
+- The USGS Earthquake API: https://earthquake.usgs.gov/fdsnws/event/1/
+- Pandas library: https://pandas.pydata.org/
 
-Install them with:
-```bash
-pip install -r requirements.txt
+## Badges
+
+Replace `username` and `repo` with your actual GitHub username and repository name.
+
+```markdown
+[![GitHub stars](https://img.shields.io/github/stars/username/repo.svg?style=social&label=Star)](https://github.com/username/repo)
+[![GitHub forks](https://img.shields.io/github/forks/username/repo.svg?style=social&label=Fork)](https://github.com/username/repo/fork)
+[![GitHub watchers](https://img.shields.io/github/watchers/username/repo.svg?style=social&label=Watch)](https://github.com/username/repo)
 ```
 
----
-
-## 👨‍💻 **Contributing**
-
-Contributions are welcome! Open an issue or submit a pull request to suggest improvements or add new features.
-
----
-
-## 🏗️ **Future Enhancements**
-
-- Support additional data sources.
-- Implement transformations in cloud platforms (e.g., AWS, Azure).
-- Add benchmarking for ETL vs. ELT performance.
-
----
-
-### 🔗 **Connect with Me**
-
-If you enjoyed this project or video, connect with me on [LinkedIn](https://www.linkedin.com/in/lukejbyrne) or leave a comment on the GitHub repo!
+This updated README provides a more detailed overview of the Earthquake Data Processing project, including installation instructions, usage, and acknowledgments. The badges at the end encourage users to star, fork, and watch the repository on GitHub.
